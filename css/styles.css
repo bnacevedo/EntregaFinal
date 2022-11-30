@@ -168,6 +168,10 @@ span {
   .nosotros-container h2 {
     color: #ffffff; }
 
+@media (max-width: 576px) {
+  .nosotros {
+    height: 105rem; } }
+
 /* ESTILO PRODUCTOS */
 #tarjeta {
   display: flex;

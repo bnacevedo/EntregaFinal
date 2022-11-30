@@ -165,7 +165,7 @@ span{
         width: 10rem;  
     }
 }
- .servicio {
+.servicio {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -220,6 +220,13 @@ span{
     }
     
 }
+
+@media (max-width: 576px){
+    .nosotros{
+        height:105rem;
+    }
+}
+
 
 /* ESTILO PRODUCTOS */
 
