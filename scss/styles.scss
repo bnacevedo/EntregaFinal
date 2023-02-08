@@ -255,6 +255,56 @@ span{
 .btn-primary{
     background-color:$secundario;
 }
+
+.shoppingCartItem{
+    border:1px solid
+}
+
+.shopping-cart-item {
+    display: flex;
+    align-items: center;
+    img{
+    padding: 10px;    
+    margin-left: 5%;
+    margin-right: 20%;   
+    height:120px;
+    width:120px;
+    }
+}
+
+.shopping-cart-header{
+    text-align: center;
+
+}
+
+.shopping-cart-price{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.shopping-cart-quantity{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    input{
+        text-align: center;
+        max-width: 45px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background: #eee;
+        padding: 5px;
+    }
+}
+
+
+.shopping-cart-total{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 15px;
+}
+
 /* ESTILO CONTACTO */
 .formulario{
     background-color: $gris;
