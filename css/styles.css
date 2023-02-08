@@ -179,7 +179,7 @@ span {
   margin-bottom: 2rem; }
 
 .card img:hover {
-  transform: scale(1.5);
+  transform: scale(1.2);
   transition: transform .3s; }
 
 .card-body {
@@ -189,6 +189,9 @@ span {
 
 .card-text {
   list-style-type: none; }
+
+.btn-primary {
+  background-color: #0097a7; }
 
 /* ESTILO CONTACTO */
 .formulario {
