@@ -101,12 +101,22 @@ function updateShoppingCartIcon() {
   
     // Obtener el número total de elementos en el carrito
     let totalItems = cart.reduce((total, item) => total + Number(item.quantity), 0);
-
     // Actualizar el contenido del icono del carrito
-    cartIcon.innerHTML = `
-        <img src="../img/carrito.png"  alt="">
-        <span class="shoppingCartItemCount">${totalItems}</span>
-    `;
+    if(totalItems==0) {
+      cartIcon.innerHTML = `
+      <img src="../img/carrito.png"  alt="">
+  `;
+    }
+
+    else{
+      cartIcon.innerHTML = `
+      <img src="../img/carrito.png"  alt="">
+      <span class="shoppingCartItemCount">${totalItems}</span>
+  `;
+    }
+
+    
+
 }
   
 
