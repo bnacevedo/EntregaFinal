@@ -44,9 +44,9 @@ function addItemToCart(cartItems) {
       shoppingCartRow.querySelector(".shoppingCartItemQuantity").addEventListener("change",quantityChanged);
     }
   }
-  updateShoppingCartTotal();
+    updateShoppingCartTotal();
+    updateShoppingCartIcon();
 }
-
 
 function removeShoppingCartItem(event){
     const buttonClicked = event.target;
@@ -58,6 +58,7 @@ function removeShoppingCartItem(event){
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
     shoppingCartItem.remove();
     updateShoppingCartTotal();
+    updateShoppingCartIcon();
 }
 
 function updateShoppingCartTotal(){
@@ -90,6 +91,25 @@ function quantityChanged(event){
     cartItems[index].quantity = input.value;
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
     updateShoppingCartTotal();
+    updateShoppingCartIcon();
+
 }
+
+function updateShoppingCartIcon() {
+    let cart = JSON.parse(localStorage.getItem("cartItems")) || [];
+    let cartIcon = document.querySelector(".shoppingCartIcon");
+  
+    // Obtener el número total de elementos en el carrito
+    let totalItems = cart.reduce((total, item) => total + Number(item.quantity), 0);
+
+    // Actualizar el contenido del icono del carrito
+    cartIcon.innerHTML = `
+        <img src="../img/carrito.png"  alt="">
+        <span class="shoppingCartItemCount">${totalItems}</span>
+    `;
+}
+  
+
+  
 
 

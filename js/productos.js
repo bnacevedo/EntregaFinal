@@ -1,3 +1,4 @@
+updateShoppingCartIcon();
 let addtocart = document.querySelectorAll(".btn-primary");
 
 addtocart.forEach(addtocartbtn =>{
@@ -25,6 +26,7 @@ function addItemToCart(itemName, itemPrice, itemImg) {
     if (existingItem) {
       // Si el elemento ya está en el carrito, aumentar la cantidad
       existingItem.quantity++;
+      $('.toast').toast('show');
     } else {
       // Si el elemento no está en el carrito, añadirlo
       cartItems.push({
@@ -37,9 +39,21 @@ function addItemToCart(itemName, itemPrice, itemImg) {
   
     // Guardar los elementos del carrito en la memoria local
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
+    updateShoppingCartIcon();
+
+}
+
+function updateShoppingCartIcon() {
+    let cart = JSON.parse(localStorage.getItem("cartItems")) || [];
+    let cartIcon = document.querySelector(".shoppingCartIcon");
   
-    // Mostrar una notificación de que el elemento se ha añadido al carrito
-    $(".toast").toast("show");
-  }
-  
+    // Obtener el número total de elementos en el carrito
+    let totalItems = cart.reduce((total, item) => total + Number(item.quantity), 0);
+
+    // Actualizar el contenido del icono del carrito
+    cartIcon.innerHTML = `
+        <img src="../img/carrito.png"  alt="">
+        <span class="shoppingCartItemCount">${totalItems}</span>
+    `;
+}
   

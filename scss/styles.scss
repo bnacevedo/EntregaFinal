@@ -64,7 +64,7 @@ span{
         display: flex;
         flex-direction: column;
         justify-content:space-between;
-        height: 25rem;
+        height: 100%;
         align-items: center;
         margin-bottom: 2rem;
         list-style:none;
@@ -79,11 +79,17 @@ span{
         padding: 1rem;
     }
 
+    img{
+        width: 5rem;
+    }
+
     a:hover{
         background-color: $primario;
         color: $oscuro;
-        border-radius: 8rem;
+        border-radius: 5rem;
     }
+
+
 }
 
 @media (min-width: 576px) {
@@ -256,19 +262,26 @@ span{
     background-color:$secundario;
 }
 
+
+// Estilo carrito
 .shoppingCartItem{
     border:1px solid
 }
 
 .shopping-cart-item {
-    display: flex;
-    align-items: center;
     img{
     padding: 10px;    
     margin-left: 5%;
     margin-right: 20%;   
     height:120px;
     width:120px;
+    }
+}
+
+@media (min-width: 576px) {
+    .shopping-cart-item {
+        display: flex;
+        align-items: center;
     }
 }
 
@@ -297,13 +310,14 @@ span{
     }
 }
 
-
 .shopping-cart-total{
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     padding: 15px;
 }
+
+
 
 /* ESTILO CONTACTO */
 .formulario{
