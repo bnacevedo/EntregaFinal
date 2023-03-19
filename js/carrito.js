@@ -121,5 +121,17 @@ function updateShoppingCartIcon() {
   
 
   
+const quote = document.querySelector("#quote");
+const author = document.querySelector("#author");
 
+function getQuote(){
+  fetch("https://quotable.io/random")
+  .then(res => res.json())
+  .then(data =>{
+    quote.innerHTML = `"<strong>${data.content}</strong>"`;
+    author.innerHTML = `"${data.author}"`;
+  })
+}
+
+document.addEventListener('DOMContentLoaded', getQuote);
 

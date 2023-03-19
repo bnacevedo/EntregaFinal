@@ -1,3 +1,5 @@
+
+
 function updateShoppingCartIcon() {
     let cart = JSON.parse(localStorage.getItem("cartItems")) || [];
     let cartIcon = document.querySelector(".shoppingCartIcon");
@@ -7,13 +9,13 @@ function updateShoppingCartIcon() {
     // Actualizar el contenido del icono del carrito
     if(totalItems==0) {
       cartIcon.innerHTML = `
-      <img src="../img/carrito.png"  alt="">
+      <img src="img/carrito.png"  alt="">
   `;
     }
 
     else{
       cartIcon.innerHTML = `
-      <img src="../img/carrito.png"  alt="">
+      <img src="img/carrito.png"  alt="">
       <span class="shoppingCartItemCount">${totalItems}</span>
   `;
     }
@@ -23,3 +25,17 @@ function updateShoppingCartIcon() {
 }
 
 updateShoppingCartIcon();
+
+const quote = document.querySelector("#quote");
+const author = document.querySelector("#author");
+
+function getQuote(){
+  fetch("https://quotable.io/random")
+  .then(res => res.json())
+  .then(data =>{
+    quote.innerHTML = `"<strong>${data.content}</strong>"`;
+    author.innerHTML = `"${data.author}"`;
+  })
+}
+
+document.addEventListener('DOMContentLoaded', getQuote);
